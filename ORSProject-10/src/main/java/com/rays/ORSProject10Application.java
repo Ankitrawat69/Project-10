@@ -12,7 +12,6 @@ public class ORSProject10Application {
 	public static void main(String[] args) {
 
 		SpringApplication.run(ORSProject10Application.class, args);
-
 	}
 
 	@Bean

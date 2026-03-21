@@ -14,7 +14,7 @@ public class MarksheetForm extends BaseForm {
 	@NotEmpty(message = "Roll No is required")
 	protected String rollNo = null;
 
-	@NotNull(message = "Student Name is required")
+	@NotNull(message = "Student id is required")
 	@Min(1)
 	protected Long studentId;
 

@@ -12,8 +12,8 @@ import com.rays.common.BaseDTO;
 @Table(name = "st_student")
 public class StudentDTO extends BaseDTO {
 
-	@Column(name = "enrol_no", length = 20)
-	private String enrolNo;
+	@Column(name = "enroll_no", length = 20)
+	private String enrollNo;
 
 	@Column(name = "first_name", length = 50)
 	private String firstName;
@@ -37,11 +37,11 @@ public class StudentDTO extends BaseDTO {
 	private String collegeName;
 
 	public String getEnrolNo() {
-		return enrolNo;
+		return enrollNo;
 	}
 
-	public void setEnrolNo(String enrolNo) {
-		this.enrolNo = enrolNo;
+	public void setEnrollNo(String enrollNo) {
+		this.enrollNo = enrollNo;
 	}
 
 	public String getFirstName() {
@@ -102,12 +102,12 @@ public class StudentDTO extends BaseDTO {
 
 	@Override
 	public String getUniqueKey() {
-		return "enrolNo";
+		return "enrollNo";
 	}
 
 	@Override
 	public String getUniqueValue() {
-		return enrolNo;
+		return enrollNo;
 	}
 
 	@Override

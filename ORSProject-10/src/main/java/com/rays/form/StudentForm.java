@@ -15,7 +15,7 @@ import com.rays.dto.StudentDTO;
 public class StudentForm extends BaseForm {
 
 	@NotEmpty(message = "Enroll No is required")
-	private String enrolNo;
+	private String enrollNo;
 
 	@NotEmpty(message = "First Name is required")
 	private String firstName;
@@ -40,12 +40,12 @@ public class StudentForm extends BaseForm {
 
 	private String collegeName;
 
-	public String getEnrolNo() {
-		return enrolNo;
+	public String getEnrollNo() {
+		return enrollNo;
 	}
 
-	public void setEnrolNo(String enrolNo) {
-		this.enrolNo = enrolNo;
+	public void setEnrollNo(String enrollNo) {
+		this.enrollNo = enrollNo;
 	}
 
 	public String getFirstName() {
@@ -109,7 +109,7 @@ public class StudentForm extends BaseForm {
 
 		StudentDTO dto = initDTO(new StudentDTO());
 
-		dto.setEnrolNo(enrolNo);
+		dto.setEnrollNo(enrollNo);
 		dto.setFirstName(firstName);
 		dto.setLastName(lastName);
 		dto.setDob(dob);
