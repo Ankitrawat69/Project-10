@@ -56,7 +56,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 		userContext = UserContextHolder.getContext();
 		if (userContext == null) {
 			UserDTO dto = new UserDTO();
-			dto.setLoginId("teamdotdev@gmail.com"); // fallback
+			dto.setLoginId("error404notfound137@gmail.com"); // fallback
 			userContext = new UserContext(dto);
 		}
 	}
