@@ -1,0 +1,126 @@
+<div class="container-fluid" style="background-image: url('assets/img/college.jpg');
+     background-size: cover;
+     background-attachment: fixed;
+     min-height: 100vh;
+     padding-top: 75px;">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow-lg">
+                <div class="card-body">
+
+                    <!-- TITLE -->
+                    <h3 class="text-center text-primary font-weight-bold" *ngIf="!form.data.id">
+                        Add Catering
+                    </h3>
+
+                    <h3 class="text-center text-primary font-weight-bold" *ngIf="form.data.id>0">
+                        Update Catering
+                    </h3>
+
+                    <!-- SUCCESS -->
+                    <div *ngIf="form.error == false && form.message"
+                        class="alert alert-success alert-dismissible text-center">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ form.message }}
+                    </div>
+
+                    <!-- ERROR -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger alert-dismissible text-center">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ form.message }}
+                    </div>
+
+                    <!-- CATERING ID -->
+                    <label><b>Catering Id *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-id-badge"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="cateringId"
+                            [(ngModel)]="form.data.cateringId" placeholder="Enter Catering Id">
+                    </div>
+                    <div>
+                        <span class="text-danger">{{form.inputerror.cateringId}}</span>
+                    </div>
+
+                    <!-- VENDOR NAME -->
+                    <label><b>Vendor Name *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="vendorName"
+                            [(ngModel)]="form.data.vendorName" placeholder="Enter Vendor Name">
+                    </div>
+                    <div>
+                        <span class="text-danger">{{form.inputerror.vendorName}}</span>
+                    </div>
+
+                    <!-- MENU TYPE -->
+                    <label><b>Menu Type *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-cutlery"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="menuType"
+                            [(ngModel)]="form.data.menuType" placeholder="Enter Menu Type">
+                    </div>
+                    <div>
+                        <span class="text-danger">{{form.inputerror.menuType}}</span>
+                    </div>
+
+                    <!-- COST -->
+                    <label><b>Cost *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-money"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="cost"
+                            [(ngModel)]="form.data.cost" placeholder="Enter Cost">
+                    </div>
+                    <div>
+                        <span class="text-danger">{{form.inputerror.cost}}</span>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="text-center mt-4">
+
+                        <button *ngIf="!form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Save
+                        </button>
+
+                        <button *ngIf="form.data.id" (click)="submit()" class="btn btn-success mr-2">
+                            Update
+                        </button>
+
+                        <button *ngIf="!form.data.id" (click)="reset()" class="btn btn-warning mr-2">
+                            Reset
+                        </button>
+
+                        <button *ngIf="form.data.id" (click)="forward('/cateringlist')" class="btn btn-warning">
+                            List
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

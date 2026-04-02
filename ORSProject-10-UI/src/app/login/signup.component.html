@@ -1,0 +1,161 @@
+<div class="container-fluid" style="background-image: url('assets/img/4236127.jpg');
+     background-size: cover;
+     background-attachment: fixed;
+     min-height: 100vh;
+     padding-top: 75px;
+     padding-bottom: 75px;">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow-lg">
+                <div class="card-body">
+
+                    <!-- TITLE -->
+                    <h3 class="text-center text-success font-weight-bold">
+                        User Registration
+                    </h3>
+
+                    <!-- SUCCESS -->
+                    <div *ngIf="!form.error && form.message" class="alert alert-success alert-dismissible text-center">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ form.message }}
+                    </div>
+
+                    <!-- ERROR -->
+                    <div *ngIf="form.error && form.message" class="alert alert-danger alert-dismissible text-center">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ form.message }}
+                    </div>
+
+                    <!-- FIRST NAME -->
+                    <label><b>First Name *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="form.data.firstName"
+                            placeholder="First Name">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.firstName}}</div>
+
+                    <!-- LAST NAME -->
+                    <label><b>Last Name *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user-circle"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="form.data.lastName"
+                            placeholder="Last Name">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.lastName}}</div>
+
+                    <!-- PASSWORD -->
+                    <label><b>Password *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-key"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="form.data.password"
+                            placeholder="Enter Password">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.password}}</div>
+
+                    <!-- CONFIRM PASSWORD -->
+                    <label><b>Confirm Password *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-key"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" name="confirmPassword"
+                            [(ngModel)]="form.data.confirmPassword" placeholder="Confirm Password">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.password}}</div>
+
+                    <!-- EMAIL -->
+                    <label><b>Email Id *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="loginId" [(ngModel)]="form.data.loginId"
+                            placeholder="Email Id">
+                    </div>
+                  <div class="text-danger">{{form.inputerror.loginId}}</div>
+
+                    <!-- MOBILE -->
+                    <label><b>Mobile No *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" name="phone" [(ngModel)]="form.data.phone"
+                            maxlength="10" placeholder="Mobile No">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.phone}}</div>
+
+                    <!-- GENDER -->
+                    <label><b>Gender *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-venus-mars"></i>
+                            </span>
+                        </div>
+                        <select class="form-control" name="gender" [(ngModel)]="form.data.gender">
+                            <option value="undefined">------------Select------------</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="text-danger">{{form.inputerror.gender}}</div>
+
+                    <!-- DOB -->
+                    <label><b>Date of Birth *</b></label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                        <input type="date" class="form-control" name="dob" [(ngModel)]="form.data.dob"
+                            [ngModel]="form.data.dob | date:'yyyy-MM-dd'">
+                    </div>
+                    <div class="text-danger">{{form.inputerror.dob}}</div>
+
+                    <!-- BUTTONS -->
+                    <div class="text-center mt-4">
+
+                        <button (click)="signUp()" class="btn btn-success mr-2">
+                            Sign Up
+                        </button>
+
+                        <button (click)="reset()" class="btn btn-secondary">
+                            Reset
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
